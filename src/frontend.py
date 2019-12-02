@@ -17,7 +17,12 @@ class Front:
             button[i].config(state = "disabled", bg = "blue")
 
         def get_question(id):
-            QuestionReader().read_question('database.txt')
+
+           question = QuestionReader().read_question(id)
+           question_window = Tk()
+           label = Label(question_window, text = question, height = 6, width = 20, font = ("Arial", 25), bg = "lightblue")
+           label.grid(row = 0, column = 0)
+           question_window.mainloop()
 
 
 
@@ -27,7 +32,12 @@ class Front:
         counter = 0
         columns = 0
         for i in range(25):
-            button.append(Button(window, text=str((counter+ 1) * 100), height = 6, width = 20, command = lambda index=i: [disable(index), print("chuj")], fg = "yellow", bg = "green"))
+            button.append(Button(window, text=str((counter+ 1) * 100),
+                                 height = 6,
+                                 width = 20,
+                                 command = lambda index=i: [disable(index), get_question(index)],
+                                 fg = "yellow",
+                                 bg = "green"))
             button[i].grid(column=columns, row=counter+1, sticky=W)
             counter += 1
             if counter % 5 == 0:

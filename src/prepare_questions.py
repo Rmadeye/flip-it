@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from src.DB import *
 
-file = 'DB/database.txt'
+
 
 
 class QuestionReader:
@@ -10,8 +10,8 @@ class QuestionReader:
     def __init__(self):
         pass
 
-    def read_question(self, file):
-        data = pd.read_csv(file, sep = ',', header = None)
-        print(data.head())
-
-QuestionReader().read_question(file)
+    def read_question(self, id):
+        file = 'DB/database.txt'
+        data = pd.read_csv(file, sep = ',')
+        question = data['quest'].values[id]
+        return question
