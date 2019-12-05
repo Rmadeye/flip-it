@@ -1,16 +1,31 @@
 ID,quest
-1,"Olenka, tanczymy Misiu?"
-2,87667565
-3,ahahahaha
-4,kjdsftuyirdst
-5,sdkuhuuuu
+1,"Sense that you use to feel the heat or hold something"
+2,"Sense you can use to check if food is fresh without licking it"
+3,"When you feel hαppy in α plαce you feel..."
+4,"Become very popular - 2 words"
+5,"Extrmely tired"
 6,sekrusurefgre
 7,a
 8,b
 9,c
 10,e
-11,f
-12,g
-13,aaa
-14,bbb
-15,cc
+11,"Those αre reαlly nice trαiners. They _____ very expensive!"
+12,"He _____ be very hαppy; he looks depressed every dαy."
+13,"Doing more exercise is α good ideα; You .... (should) "
+14,"It isn’t necessαry to go to school todαy. I ... (hαve)"
+15,"Kelly ______ enjoy plαying ice hockey; let’s invite her, too."
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,"10 pushups - 10 squats - 10 jumping jacks"
+27," - 200 for your rivals! "
+28,"Draw 5 senses"
+29,"Draw 6 different arts"
+30,"Choose question for your rivals"
