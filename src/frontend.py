@@ -16,13 +16,24 @@ class Front:
 
             button[i].config(state = "disabled", bg = "blue")
 
-        def get_question(id):
+        def get_question(id, remaining = 60):
 
            question = QuestionReader().read_question(id)
            question_window = Tk()
-           label = Label(question_window, text = question, height = 6, width = 20, font = ("Arial", 25), bg = "lightblue")
-           label.grid(row = 0, column = 0)
+           label_question = Label(question_window, text = question, height = 6, width = 20, font = ("Arial", 25), bg = "lightblue")
+           label_time = Label(question_window, text = '', width = 10)
+           label_question.grid(row = 0, column = 0)
+
+           if remaining <= 0:
+               label_time.configure(text="time's up!")
+           else:
+               label_time.configure(text="%d" % remaining)
+               remaining = remaining - 1
+
+
            question_window.mainloop()
+
+
 
 
 
