@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 from src.DB import *
 
@@ -11,7 +10,7 @@ class QuestionReader:
         pass
 
     def read_question(self, id):
-        file = 'DB/database.txt'
+        file = r'src/DB/database.txt'
         data = pd.read_csv(file, sep = ',')
         question = data['quest'].values[id]
         return question

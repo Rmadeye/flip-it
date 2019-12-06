@@ -3,27 +3,27 @@ ID,quest
 2,"Sense you can use to check if food is fresh without licking it"
 3,"When you feel hαppy in α plαce you feel..."
 4,"Become very popular - 2 words"
-5,"Extrmely tired"
-6,sekrusurefgre
-7,a
-8,b
-9,c
-10,e
+5,"Extremely tired"
+6,"Something very boring"
+7,"(About art) Very good, much better than the standard"
+8,"A situation in which it is possible for you to do something that you want to do."
+9,"A series of musical notes, especially one that is pleasant and easy to remember"
+10,"A painting which shows a scene in the countryside."
 11,"Those αre reαlly nice trαiners. They _____ very expensive!"
 12,"He _____ be very hαppy; he looks depressed every dαy."
 13,"Doing more exercise is α good ideα; You .... (should) "
 14,"It isn’t necessαry to go to school todαy. I ... (hαve)"
-15,"Kelly ______ enjoy plαying ice hockey; let’s invite her, too."
-16,
-17,
-18,
-19,
-20,
-21,
-22,
-23,
-24,
-25,
+15,"Kelly ______ enjoy playing ice hockey; let’s invite her, too."
+16,"They painted this mural 10 years ago"
+17,"Mickiewicz wrote Dziady several years ago"
+18,"Janusz is playing rap on his telephone"
+19,"I will win the match in Fortnite"
+20,"Should I play the music?"
+21,"Write: 1 234 on whiteboard"
+22,"Conjugate: Understand in past simple and past participle"
+23,"Write 65 786 on blackboard"
+24,"Say and pronounce: anxious, comfortable, usually"
+25,"Say: 1 980 765 776"
 26,"10 pushups - 10 squats - 10 jumping jacks"
 27," - 200 for your rivals! "
 28,"Draw 5 senses"

@@ -5,7 +5,6 @@ from src.prepare_questions import QuestionReader
 
 class Front:
 
-
     def __init__(self):
         window = Tk()
         window.wm_title("Flip the buttons!")
@@ -17,36 +16,38 @@ class Front:
             button[i].config(state = "disabled", bg = "blue")
 
         def get_question(id):
+            question_window = Tk()
+            question_window.wm_title("Question number {}".format(id+1))
+            question = QuestionReader().read_question(id)
 
-           question = QuestionReader().read_question(id)
-           question_window = Tk()
-           question_window.wm_title("Question number {}".format(id))
-           label_question = Label(question_window, text = question, height = 6, width = 55, font = ("Arial", 25), bg = "lightblue")
-           label_time = Label(question_window, text = '', width = 10)
-           label_question.grid(row = 0, column = 0)
-           label_time.grid(row = 1, column = 0)
+            def exit():
+                question_window.destroy()
 
-           def countdown(count):
-               # change text in label
-               label_time['text'] = count
+            label_question = Label(question_window, text = question, height = 6, width = 65, font = ("Arial", 25), bg = "lightblue")
+            label_time = Label(question_window, text = '', width = 10)
+            label_question.grid(row = 0, column = 0)
+            label_time.grid(row = 1, column = 0)
+            button_exit = Button(question_window, text = "Exit", command = exit )
+            button_exit.grid(row = 2, column = 0)
 
-               if count > 0:
-                   question_window.after(1000, countdown, count - 1)
+            def countdown(count):
+                label_time['text'] = count
 
-           countdown(60)
+                if count > 0:
+                    question_window.after(1000, countdown, count - 1)
+            countdown(60)
 
-
-           question_window.mainloop()
+            question_window.mainloop()
 
         background_image = PhotoImage("src/DB/brain_lt.png")
         background_label = Label(window, image=background_image)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
         button = []
-        label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - 1', 'Grammar - 2', 'Misc', 'Fun!']
+        label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
         labels = []
         counter = 0
         columns = 0
-        for i in range(25):
+        for i in range(30):
             button.append(Button(window, text=str((counter+ 1) * 100),
                                  height = 7,
                                  width = 24,
@@ -64,5 +65,3 @@ class Front:
         window.mainloop()
 
 
-if __name__ == "__main__":
-    Front()
