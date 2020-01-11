@@ -18,7 +18,7 @@ class Front:
         def get_question(id):
             question_window = Tk()
             question_window.wm_title("Question number {}".format(id+1))
-            question = QuestionReader().read_question(id)
+            question = QuestionReader(id).read_question()
 
             def exit():
                 question_window.destroy()
@@ -27,7 +27,7 @@ class Front:
             label_time = Label(question_window, text = '', width = 10)
             label_question.grid(row = 0, column = 0)
             label_time.grid(row = 1, column = 0)
-            button_exit = Button(question_window, text = "Exit", command = exit )
+            button_exit = Button(question_window, text = "Exit", command = exit)
             button_exit.grid(row = 2, column = 0)
 
             def countdown(count):
@@ -39,9 +39,9 @@ class Front:
 
             question_window.mainloop()
 
-        background_image = PhotoImage("src/DB/brain_lt.png")
-        background_label = Label(window, image=background_image)
-        background_label.place(x=0, y=0, relwidth=1, relheight=1)
+        # background_image = PhotoImage("src/DB/brain_lt.png")
+        # background_label = Label(window, image=background_image)
+        # background_label.place(x=0, y=0, relwidth=1, relheight=1)
         button = []
         label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
         labels = []

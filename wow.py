@@ -1,4 +1,4 @@
-from src import frontend
+from src import main_screen
 
 if __name__ == "__main__":
-    frontend.Front()
+    main_screen.MainScreen()
