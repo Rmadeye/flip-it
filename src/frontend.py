@@ -3,19 +3,9 @@ from src.prepare_questions import QuestionReader
 
 
 
-class Front:
+class Front(Frame):
 
-    def __init__(self):
-        window = Tk()
-        window.wm_title("Flip the buttons!")
-
-        """ GUI """
-
-        def disable(i):
-
-            button[i].config(state = "disabled", bg = "blue")
-
-        def get_question(id):
+        def get_question(self, id):
             question_window = Tk()
             question_window.wm_title("Question number {}".format(id+1))
             question = QuestionReader(id).read_question()
@@ -39,29 +29,36 @@ class Front:
 
             question_window.mainloop()
 
-        # background_image = PhotoImage("src/DB/brain_lt.png")
-        # background_label = Label(window, image=background_image)
-        # background_label.place(x=0, y=0, relwidth=1, relheight=1)
-        button = []
-        label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
-        labels = []
-        counter = 0
-        columns = 0
-        for i in range(30):
-            button.append(Button(window, text=str((counter+ 1) * 100),
-                                 height = 7,
-                                 width = 24,
-                                 command = lambda index=i: [disable(index), get_question(index)],
-                                 fg = "yellow",
-                                 bg = "green"))
-            button[i].grid(column=columns, row=counter+1, sticky=W)
-            counter += 1
-            if counter % 5 == 0:
-                labels.append(Label(window, text=label_names[columns], height = 3, width = 24))
-                labels[columns].grid(column=columns, row = 0)
-                counter = 0
-                columns += 1
+        def create_widgets(self):
+            button = []
+            label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
+            labels = []
+            counter = 0
+            columns = 0
+            for i in range(30):
+                button.append(Button(self, text=str((counter+ 1) * 100),
+                                     height = 7,
+                                     width = 24,
+                                     command = lambda index=i: [disable(index), self.get_question(index)],
+                                     fg = "yellow",
+                                     bg = "green"))
+                button[i].grid(column=columns, row=counter+1, sticky=W)
+                counter += 1
+                if counter % 5 == 0:
+                    labels.append(Label(self, text=label_names[columns], height = 3, width = 24))
+                    labels[columns].grid(column=columns, row = 0)
+                    counter = 0
+                    columns += 1
 
-        window.mainloop()
+            def disable(i):
+
+                button[i].config(state="disabled", bg="blue")
+
+        def __init__(self, master = None):
+            Frame.__init__(self, master)
+            self.winfo_toplevel().title("Flip the buttons!")
+            self.pack()
+            self.create_widgets()
+            self.mainloop()
 
 
