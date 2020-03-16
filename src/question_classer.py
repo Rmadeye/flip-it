@@ -1,3 +1,5 @@
+from src import db_handler
+
 class MakeQuestions:
 
     def __init__(self, question, points, id):
@@ -7,5 +9,5 @@ class MakeQuestions:
 
     def row(self):
         entry = (self.question, self.points, self.id)
-        return entry
+        return db_handler
 

@@ -1,6 +1,6 @@
 import sqlite3
 from tkinter import *
-from src import db_handler as db
+from src import db_handler as db, question_classer as qc
 
 class TableToolkitFrontend(Frame):
 
@@ -15,9 +15,15 @@ class TableToolkitFrontend(Frame):
             self.question_label = Label(self, text = "Add question for {} points".
                                         format(self.point_counter)
                                         ).grid(row = self.question_counter+1, column =0)
-            self.question_entry = Entry(self).grid(row = self.question_counter+1, column = 1, ipadx = 100)
-            self.add_button = Button(self, text = "Add question",
-                                     command = db.DBWriter().save_question
+            self.question_entry = Entry(self)
+            self.question_entry.grid(row = self.question_counter+1, column = 1, ipadx = 100)
+            def get_data():
+                return qc.MakeQuestions(id = self.question_counter,
+                                                                points = self.point_counter,
+                                                                question = str(self.question_entry.get())).row()
+
+            self.add_button = Button(self, text = "Add to database",
+                                     command = get_data
                                      ).grid(row = self.question_counter + 1, column = 2)
 
             return None

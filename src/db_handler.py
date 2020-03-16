@@ -2,8 +2,12 @@ import os, sqlite3
 
 class DBWriter:
 
-    def save_question(self):
-        print("satan")
+    def __init__(self, tablename, id, question, points):
+        self.tablename = tablename
+        self.id = id
+        self.question = question
+        self.points = points
+
 
     def exportToDB(dataframe, tbl_name, db_name):
         conn = sqlite3.connect(db_name)
