@@ -2,6 +2,9 @@ import os, sqlite3
 
 class DBWriter:
 
+    def save_question(self):
+        print("satan")
+
     def exportToDB(dataframe, tbl_name, db_name):
         conn = sqlite3.connect(db_name)
         cur = conn.cursor()
