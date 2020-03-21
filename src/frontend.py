@@ -6,11 +6,12 @@ from src.db_handler import DBWriter
 
 class Front(Frame):
 
-        def get_question(self, dataframe, id):
+        def get_question(self, dataframe, question_id):
             question_window = Tk()
-            question_window.wm_title("Question number {}".format(id+1))
+            question_window.wm_title("Question number {}".format(question_id+1))
             # question = QuestionReader(id).read_question()
-            question = dataframe.loc[dataframe['id'] == id]['Question'].values
+            question = dataframe.loc[dataframe['question_id'] == question_id]['Question'].values
+            print(question)
 
             def exit():
                 question_window.destroy()
@@ -40,7 +41,7 @@ class Front(Frame):
             labels = []
             counter = 0
             columns = 0
-            for i in range(len(game_data['id'])):
+            for i in range(len(game_data['question_id'])):
                 button.append(Button(self, text=str((counter+ 1) * 100),
                                      height = 7,
                                      width = 24,

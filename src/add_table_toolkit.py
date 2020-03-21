@@ -1,4 +1,3 @@
-import sqlite3
 from tkinter import *
 from src import question_classer as qc
 
@@ -20,7 +19,7 @@ class TableToolkitFrontend(Frame):
 
 
             def get_data():
-                return qc.MakeQuestions(id = self.question_counter,
+                return qc.MakeQuestions(question_id = self.question_counter - 1,
                                         category = self.category_entry.get(),
                                                                 points = self.point_counter,
                                                                 question = self.question_entry.get(),

@@ -3,16 +3,16 @@ import pandas as pd
 
 class MakeQuestions:
 
-    def __init__(self, question, category, points, id, game):
+    def __init__(self, question, category, points, question_id, game):
         self.question = question
         self.points = points
-        self.id = id
+        self.question_id = question_id
         self.game = game
         self.category = category
 
     def row(self):
-        entry = [self.id, self.question, self.category, self.points]
+        entry = [self.question_id, self.question, self.category, self.points]
         dataframe = pd.DataFrame(entry)
         dataframe = dataframe.transpose()
-        dataframe.columns = ['id', 'Question', 'Category', 'Points']
-        return db_handler.DBWriter('DB/questions.db').exportToDB(dataframe, self.game)
+        dataframe.columns = ['question_id', 'Question', 'Category', 'Points']
+        return db_handler.DBWriter('src/DB/questions.db').exportToDB(dataframe, self.game)
