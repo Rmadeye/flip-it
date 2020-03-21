@@ -1,16 +1,12 @@
-import os, sqlite3
-
+import os, sqlite3, pandas
 class DBWriter:
 
-    def __init__(self, tablename, id, question, points):
-        self.tablename = tablename
-        self.id = id
-        self.question = question
-        self.points = points
+    def __init__(self, db_name):
+        self.db_name = db_name
 
 
-    def exportToDB(dataframe, tbl_name, db_name):
-        conn = sqlite3.connect(db_name)
+    def exportToDB(self, dataframe, tbl_name):
+        conn = sqlite3.connect(self.db_name)
         cur = conn.cursor()
 
         wildcards = ','.join(['?'] * len(dataframe.columns))
@@ -23,17 +19,19 @@ class DBWriter:
         conn.commit()
         conn.close()
 
-    # Database creation
-    def saveEntry(self, newEntry):
-        date = newEntry.date
-        login = newEntry.login
-        url = newEntry.url
-        password = newEntry.password
-        dfList = [date,
-                  login,
-                  url,
-                  password]
-        dataframe = pd.DataFrame(dfList)
-        dataframe = dataframe.transpose()
-        dataframe.columns = ['Date', 'Login', 'Url', 'Password']
-        DBWriter.exportToDB(dataframe, 'passwords', 'testDB.db')
+    def get_games(self):
+        conn = sqlite3.connect(self.db_name)
+        games = conn.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        # print(game for game in games)
+        return [game[0] for game in games]
+
+    def load_data(self, game):
+        conn = sqlite3.connect(self.db_name)
+
+        return pandas.read_sql_query("SELECT * FROM {}".format(game),conn)
+
+
+
+if __name__ == "__main__":
+    DBWriter('src/DB/questions.db').load_data('test_at')
+

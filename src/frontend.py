@@ -1,19 +1,23 @@
 from tkinter import *
 from src.prepare_questions import QuestionReader
+from src.db_handler import DBWriter
 
 
 
 class Front(Frame):
 
-        def get_question(self, id):
+        def get_question(self, dataframe, id):
             question_window = Tk()
             question_window.wm_title("Question number {}".format(id+1))
-            question = QuestionReader(id).read_question()
+            # question = QuestionReader(id).read_question()
+            question = dataframe.loc[dataframe['id'] == id]['Question'].values
 
             def exit():
                 question_window.destroy()
 
-            label_question = Label(question_window, text = question, height = 6, width = 65, font = ("Arial", 25), bg = "lightblue")
+            label_question = Label(question_window, text = question, height = 6, width = 65,
+                                   font = ("Arial", 25), bg = "lightblue")
+
             label_time = Label(question_window, text = '', width = 10)
             label_question.grid(row = 0, column = 0)
             label_time.grid(row = 1, column = 0)
@@ -30,22 +34,26 @@ class Front(Frame):
             question_window.mainloop()
 
         def create_widgets(self):
+            game_data = DBWriter('src/DB/questions.db').load_data(self.game)
             button = []
-            label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
+            categories = [cat for cat in game_data['Category'].unique()]
             labels = []
             counter = 0
             columns = 0
-            for i in range(30):
+            for i in range(len(game_data['id'])):
                 button.append(Button(self, text=str((counter+ 1) * 100),
                                      height = 7,
                                      width = 24,
-                                     command = lambda index=i: [disable(index), self.get_question(index)],
+                                     command = lambda index=i: [disable(index),
+                                                                self.get_question(game_data, index)],
                                      fg = "yellow",
                                      bg = "green"))
+
                 button[i].grid(column=columns, row=counter+1, sticky=W)
                 counter += 1
+
                 if counter % 5 == 0:
-                    labels.append(Label(self, text=label_names[columns], height = 3, width = 24))
+                    labels.append(Label(self, text=categories[columns], height = 3, width = 24))
                     labels[columns].grid(column=columns, row = 0)
                     counter = 0
                     columns += 1
@@ -54,9 +62,10 @@ class Front(Frame):
 
                 button[i].config(state="disabled", bg="blue")
 
-        def __init__(self, master = None):
+        def __init__(self, game, master = None):
             Frame.__init__(self, master)
             self.winfo_toplevel().title("Flip the buttons!")
+            self.game = game
             self.pack()
             self.create_widgets()
             self.mainloop()

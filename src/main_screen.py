@@ -1,6 +1,7 @@
 from tkinter import *
 from src import frontend as f
 from src import create_questions as cq
+from src import db_handler as db
 
 """Main screen of the application"""
 
@@ -8,7 +9,16 @@ from src import create_questions as cq
 class MainScreen(Frame):
 
     def initialize_game(self):
-        return f.Front(Toplevel())
+        select_game = Tk()
+        select_game.wm_title("Select game")
+        choice = StringVar(select_game)
+        select_label = Label(select_game, text = "Select game").grid(row = 0, column = 0)
+        menu = OptionMenu(select_game, choice, *db.DBWriter("src/DB/questions.db").get_games())
+        menu.config(fg="red",bg='deep sky blue')
+        menu.grid(row=1, column=0)
+
+        apply_button = Button(select_game, text = "OK!",
+                              command = lambda : [print(choice.get()), f.Front(choice.get())]).grid(row = 2, column = 0)
 
     def initialize_questions(self):
         return cq.QuestionsFrontend(Toplevel())
