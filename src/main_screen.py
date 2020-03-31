@@ -18,7 +18,7 @@ class MainScreen(Frame):
         menu.grid(row=1, column=0)
 
         apply_button = Button(select_game, text = "OK!",
-                              command = lambda : [print(choice.get()), f.Front(choice.get())]).grid(row = 2, column = 0)
+                              command = lambda : [f.Front(choice.get()), select_game.destroy()]).grid(row = 2, column = 0) #"""Dopisz autoquit'a"""
 
     def initialize_questions(self):
         return cq.QuestionsFrontend(Toplevel())

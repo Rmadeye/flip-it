@@ -15,4 +15,5 @@ class MakeQuestions:
         dataframe = pd.DataFrame(entry)
         dataframe = dataframe.transpose()
         dataframe.columns = ['question_id', 'Question', 'Category', 'Points']
+        print(dataframe)
         return db_handler.DBWriter('src/DB/questions.db').exportToDB(dataframe, self.game)

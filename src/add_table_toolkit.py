@@ -1,5 +1,6 @@
 from tkinter import *
 from src import question_classer as qc
+from functools import partial
 
 class TableToolkitFrontend(Frame):
 
@@ -26,7 +27,7 @@ class TableToolkitFrontend(Frame):
                                                                 game = self.table_name_entry.get()).row()
 
             self.add_button = Button(self, text = "Add to database",
-                                     command = get_data
+                                     command = partial(get_data)
                                      ).grid(row = self.question_counter + 1, column = 3)
 
             return None

@@ -9,10 +9,7 @@ class Front(Frame):
         def get_question(self, dataframe, question_id):
             question_window = Tk()
             question_window.wm_title("Question number {}".format(question_id+1))
-            # question = QuestionReader(id).read_question()
-            question = dataframe.loc[dataframe['question_id'] == question_id]['Question'].values
-            print(question)
-
+            question = dataframe.loc[dataframe['question_id'] == question_id]['Question'].values[0]
             def exit():
                 question_window.destroy()
 
@@ -36,6 +33,7 @@ class Front(Frame):
 
         def create_widgets(self):
             game_data = DBWriter('src/DB/questions.db').load_data(self.game)
+            print(game_data)
             button = []
             categories = [cat for cat in game_data['Category'].unique()]
             labels = []
