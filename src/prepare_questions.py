@@ -6,7 +6,7 @@ import pandas as pd
 class QuestionReader:
 
     def __init__(self, id):
-        self.file = r'src/DB/database.txt'
+        self.file = r'src/DB/for-how-long.txt'
         self.id = id
 
     def read_question(self):

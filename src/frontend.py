@@ -31,11 +31,12 @@ class Front(Frame):
 
         def create_widgets(self):
             button = []
-            label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar - modals', 'Grammar - passive', 'Misc', 'Fun!']
+            # label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar 1', 'Grammar - 2', 'Misc', 'Fun!', 'Mystery 1', 'Mystery 2']
+            label_names = ['Part 1', "Part 2", "Part 3"]
             labels = []
             counter = 0
             columns = 0
-            for i in range(30):
+            for i in range(15):
                 button.append(Button(self, text=str((counter+ 1) * 100),
                                      height = 7,
                                      width = 24,
@@ -45,7 +46,7 @@ class Front(Frame):
                 button[i].grid(column=columns, row=counter+1, sticky=W)
                 counter += 1
                 if counter % 5 == 0:
-                    labels.append(Label(self, text=label_names[columns], height = 3, width = 24))
+                    labels.append(Label(self, text=label_names[columns], height = 2, width = 20))
                     labels[columns].grid(column=columns, row = 0)
                     counter = 0
                     columns += 1
