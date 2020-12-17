@@ -35,10 +35,16 @@ ID,quest
 34,"Name 5 things you find in a classroom"
 35,"Write down in words: 980 765 776"
 36,"Spell all the nicknames in class"
-37,"10 pushups - 10 squats - 10 jumping jacks"
+37,"20 squats - 20 jumping jacks"
 38," - 200 for your rivals! "
-39,"Draw 5 senses"
-40,"Draw 6 different arts"
+39,"In this sport you can kick a ball
+Or you can also use your head
+Try not to do a bad tackle
+Or you’ll be shown a card that’s red"
+40,"I’m something made of metal
+Although I am not a bell
+I am something that is round
+You throw in a wishing well"
 41,"This item can be used
 To see what is right there
 An evil queen used hers

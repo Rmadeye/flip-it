@@ -25,18 +25,21 @@ class Front(Frame):
 
                 if count > 0:
                     question_window.after(1000, countdown, count - 1)
-            countdown(20)
+            countdown(60)
 
             question_window.mainloop()
 
         def create_widgets(self):
             button = []
             # label_names = ['Vocabulary - 1', 'Vocabulary - 2', 'Grammar 1', 'Grammar - 2', 'Misc', 'Fun!', 'Mystery 1', 'Mystery 2']
-            label_names = ["Nouns","Nouns","Nouns",'Adjectives', "Adjectives", "Adjectives",'Verbs', "Verbs", "Verbs"]
+            """Starszaki"""
+            # label_names = ["Vocabulary-1",
+            # "Vocabulary-2","WF-1",'WF-2', "Grammar-1", "Vocabulary-extra",'Misc', "Mysteries", "Verbs"]
+            label_names = ['Voc-1','Voc-2','Body parts','G-1','G-2','Misc','Mystery']
             labels = []
             counter = 0
             columns = 0
-            for i in range(40):
+            for i in range(35):
                 button.append(Button(self, text=str((counter+ 1) * 100),
                                      height = 7,
                                      width = 24,

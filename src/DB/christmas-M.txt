@@ -1,0 +1,52 @@
+ID,quest
+1,"Something you read. Not book"
+2,"The time between the classes"
+3,"Something that keep you warm (2)"
+4,"Thing in school informing you that class starts"
+5,"A place where students eat"
+6,"Can be in Celsius, Kelvin or Fahrenheit"
+7,"Very old"
+8,"When air comes out of your nose and mouth"
+9,"Comes with high temperature"
+10,"You put your hand over your mouth to do this"
+11,"1"
+12,"2"
+13,"3"
+14,"4"
+15,"5"
+16,"Nie jadlem od rana"
+17,"Nigdy nie bylem w Anglii"
+18,"Czy kiedykolwiek jadles pizze?"
+19,"Wczoraj bylem w szkole"
+20,"Jak dlugo uczysz sie angielskiego?"
+21,"My thorat hurts. How is...(twoj)"
+22,"This water is not mine. It is (jej)"
+23,"Czyje są te spodnie? Jej"
+24,"Ich chleb jest super!"
+25,"Od kiedy to Twoj zegarek?"
+26,"-100!"
+27,"Sing "Let it snow" chorus"
+28,"Spell the name and the surname of the teacher"
+29,"Name 5 things you find in a classroom"
+30,"Read the number: 980 765 776"
+31,"Be careful with this type of pet
+As some may scratch you with their claws
+Some of them always stay inside
+While some like to roam outdoors"
+32,"I’m something that is sticky
+I’m something that is sweet
+I’m made by more than one bee
+I’m something that you eat"
+33,"When he gets on his vehicle
+He tells his animals to go go go
+And he’s a jolly old fellow
+As he is always going ho ho ho"
+34,"This is something you can find
+In a lake and in a stream
+When frozen it turns to ice
+When boiled it turns to steam"
+35,"One of my favorite things
+Is to run around the park
+If I am unhappy
+Then you might hear me bark"
+
