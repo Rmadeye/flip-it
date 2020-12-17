@@ -36,7 +36,7 @@ class Front(Frame):
             labels = []
             counter = 0
             columns = 0
-            for i in range(45):
+            for i in range(40):
                 button.append(Button(self, text=str((counter+ 1) * 100),
                                      height = 7,
                                      width = 24,

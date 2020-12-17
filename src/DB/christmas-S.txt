@@ -1,0 +1,50 @@
+ID,quest
+1,"extra money or piece of advice"
+2,"stairs or stages"
+3,"aims, targets, scores"
+4,"keen, sensible"
+5,"Schedule, performance"
+6,"List 5 sample jobs for teenagers"
+7,"3 Advices for job interview"
+8,"source of information, e.g. from previous boss or job"
+9,"Word describing the will to work with changing hours; elastic"
+10,"Ten questions you can ask during the interview"
+11,"Noun: boring"
+12,"Verb: attractive"
+13,"Noun: pronounce"
+14,"Verb: weight"
+15,"Adjective: reasoning"
+16,"Noun: Describe"
+17,"Adjective: improvement"
+18,"verb: Careful"
+19,"Adjective: describe"
+20,"Noun: arrangement"
+21,"We .... tomorrow (meet)"
+22,"... he .... quite often? (win)
+23,"It that her success has inspired other young people.(appear)"
+24,"He ... when people watch him. Especially now. (hate)"
+25,"It ... to you now (belong)"
+26,"When you do something for free to help people"
+27,"Someone who teaches"
+28,"To compete for your country"
+29,"To move to another place to live (phrasal)"
+30,"To give tickets, leaflets etc. (phrasal)"
+31,"-100!"
+32,"Sing "Let it snow" chorus"
+33,"Spell the name and the surname of the teacher"
+34,"Name 5 things you find in a classroom"
+35,"Write down in words: 980 765 776"
+36,"Spell all the nicknames in class"
+37,"10 pushups - 10 squats - 10 jumping jacks"
+38," - 200 for your rivals! "
+39,"Draw 5 senses"
+40,"Draw 6 different arts"
+41,"This item can be used
+To see what is right there
+An evil queen used hers
+To find out who’s most fair
+There’s two of these on the sides of cars
+And two on the side of a truck
+If you accidentally break one
+You’ll have seven years bad luck"
+

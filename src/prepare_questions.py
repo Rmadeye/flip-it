@@ -6,7 +6,7 @@ import pandas as pd
 class QuestionReader:
 
     def __init__(self, id):
-        self.file = r'src/DB/word-formation.txt'
+        self.file = r'src/DB/christmas-S.txt'
         self.id = id
 
     def read_question(self):
